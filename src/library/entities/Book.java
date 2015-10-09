@@ -56,6 +56,10 @@ public class Book implements IBook {
 	public ILoan getLoan() {
 		return loan;
 	}
+        public ILoan getinstantLoan() {
+		return loan;
+	}
+
 
 	
 	@Override
