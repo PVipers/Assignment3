@@ -72,7 +72,18 @@ public class Book implements IBook {
 		}
 	}
 
-	
+	public void ReserveBook(boolean addbook) {
+		if (!(state == EBookState.ON_LOAN || state == EBookState.LOST)) {
+			throw new RuntimeException(String.format("Illegal operation in state : %s", state));
+		}
+		loan = null;
+            int book = 0;
+		if(book>=1)
+                {
+			state = EBookState.AVAILABLE;
+		}
+	}
+        
 	@Override
 	public void lose() {
 		if (!(state == EBookState.ON_LOAN)) {

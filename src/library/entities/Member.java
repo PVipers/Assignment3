@@ -19,6 +19,7 @@ public class Member implements IMember {
 	private EMemberState state;
 	private List<ILoan> loanList;
 	private float totalFines;
+    private Object fine;
 	
 	public Member(String firstName, String lastName, String contactPhone,
 			String email, int memberID) {
@@ -104,6 +105,15 @@ public class Member implements IMember {
 			throw new RuntimeException(String.format("Member: addLoan : illegal operation in state: %s", state));
 		}
 		loanList.add(loan);
+		updateState();
+	}
+        
+        public void refundLoan(ILoan loan) {
+		if (fine==null) {
+		} else {
+                    throw new RuntimeException(String.format("Member: refundLoan : illegal operation in state: %s", state));
+            }
+		totalFines-=0;
 		updateState();
 	}
 
