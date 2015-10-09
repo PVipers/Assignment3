@@ -37,7 +37,8 @@ public class BorrowUC_UI extends ABorrowPanel {
 		addPanel(new CompletedPanel(),           EBorrowState.COMPLETED);
 	}
 	
-	private void addPanel(ABorrowPanel panel, EBorrowState state) {
+	private void addPanel(ABorrowPanel panel, EBorrowState state) 
+        {
         this.panels.put(state, panel);
         this.add(panel, state.toString());
  	}
