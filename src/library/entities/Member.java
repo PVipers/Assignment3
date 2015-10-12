@@ -64,6 +64,11 @@ public class Member implements IMember {
 		return b;
 	}
 
+	public boolean BorrowLoan() {
+		boolean b = loanList.size() >= IMember.LOAN_LIMIT;
+		return b;
+	}
+
 	@Override
 	public boolean hasFinesPayable() {
 		boolean b = totalFines > 0.0f;
