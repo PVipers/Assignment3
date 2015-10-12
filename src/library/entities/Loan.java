@@ -63,6 +63,17 @@ public class Loan implements ILoan {
 		}
 		state = ELoanState.COMPLETE;		
 	}
+	
+	public void BorrowTest() {
+		//tested by rushang
+		if (!(state == ELoanState.CURRENT || state == ELoanState.OVERDUE)) {
+			throw new RuntimeException(
+					String.format("Loan : complete : incorrect state transition  : %s -> %s\n",
+							state, ELoanState.COMPLETE));
+		}
+		state = ELoanState.COMPLETE;		
+	}
+	
 
 	@Override
 	public boolean isOverDue() {
